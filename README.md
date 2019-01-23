@@ -2,6 +2,8 @@
 
 ### Overview
 
+#### Change made by Will Farrell
+
 Our group decided to create a webapp for a food truck. With the nature of food trucks being on the move all the time, we believe that communication with current and prospective customers is highly important. The easier it is for them to find the food truck, the better it is. Even more, the easier it is for them to order the food, the better it is. Therefore, we want to create an app that would eventually accomplish all of that; we want to create an app that removes the barrier between a food truck and its customers.
 
 Through our webapp, food truck owner would be able to update the menu, update the location, alert customers, access orders, update calendar, and create custom notifications for customers. Basically, the owner would have all they need to update the customers with the latest important information.
