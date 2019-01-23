@@ -35,4 +35,4 @@ Our biggest hurdle would be learning on how to implement different APIs. Besides
 
 
 #### Group Members
-- Will Farrell
+- Will Farrell, LaurenNicole
