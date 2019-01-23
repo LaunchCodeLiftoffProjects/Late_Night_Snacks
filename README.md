@@ -33,4 +33,7 @@ We will be building the app using:
 
 Our biggest hurdle would be learning on how to implement different APIs. Besides that, while we have done a few full stack projects and database designs before this, I foresee some struggle with setting up our database. We won't necessarily struggle syntatically, but from design perspective, we need to make sure that the database design is solid. We need one that is flexible enough for future expansion, and yet at the same time not too abstract/general.
 
-### I Am Pushing This to Master!
+
+#### Group Members
+- Will Farrell, LaurenNicole
+- Ismail Adiputra
