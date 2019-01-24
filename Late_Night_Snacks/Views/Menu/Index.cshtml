@@ -1,0 +1,21 @@
+﻿@model List<Late_Night_Snacks.Models.Menu>
+<h1>Menu Items</h1>
+
+<table class="table">
+    <tr>
+        <th>Item</th>
+        <th>Price</th>
+    </tr>
+    @foreach(var m in Model)
+    {
+        <tr>
+            <td>@m.MenuItem</td>
+            <td>@m.Price.ToString()</td>
+        </tr>
+    }
+</table>
+
+@if(Model.Count == 0)
+{
+    <p>NO FOOD FOR YOU!!!!</p>
+}
