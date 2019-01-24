@@ -13086,11 +13086,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ismailadiputra\\Source\\Repos\\ifamvd\\CheeseMVCPersistent\\src\\CheeseMVC\\CheeseMVC.csproj",
+      "projectUniqueName": "C:\\Users\\ismailadiputra\\Source\\Repos\\LaunchCodeLiftoffProjects\\Late_Night_Snacks\\src\\CheeseMVC\\CheeseMVC.csproj",
       "projectName": "CheeseMVC",
-      "projectPath": "C:\\Users\\ismailadiputra\\Source\\Repos\\ifamvd\\CheeseMVCPersistent\\src\\CheeseMVC\\CheeseMVC.csproj",
+      "projectPath": "C:\\Users\\ismailadiputra\\Source\\Repos\\LaunchCodeLiftoffProjects\\Late_Night_Snacks\\src\\CheeseMVC\\CheeseMVC.csproj",
       "packagesPath": "C:\\Users\\ismailadiputra\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ismailadiputra\\Source\\Repos\\ifamvd\\CheeseMVCPersistent\\src\\CheeseMVC\\obj\\",
+      "outputPath": "C:\\Users\\ismailadiputra\\Source\\Repos\\LaunchCodeLiftoffProjects\\Late_Night_Snacks\\src\\CheeseMVC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
