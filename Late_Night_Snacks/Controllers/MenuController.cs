@@ -23,8 +23,8 @@ namespace Late_Night_Snacks.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            List<Menu> menus = context.Menus.ToList();
-            return View("Index",menus);
+            ViewBag.menus = context.Menus.ToList();
+            return View();
         }
 
         public IActionResult AddMenu()
@@ -50,6 +50,24 @@ namespace Late_Night_Snacks.Controllers
             }
            
             return View(addMenuViewModel);
+        }
+
+        public IActionResult Remove()
+        {
+            ViewBag.title = "Remove Menu.";
+            ViewBag.menus = context.Menus.ToList();
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Remove(int[] menuIds)
+        {
+            foreach(int menuId in menuIds)
+            {
+                Menu theItem = context.Menus.Single(x => x.ID == menuId);
+                context.Menus.Remove(theItem);
+            }
+            context.SaveChanges();
+            return Redirect("/");
         }
     }
 }
