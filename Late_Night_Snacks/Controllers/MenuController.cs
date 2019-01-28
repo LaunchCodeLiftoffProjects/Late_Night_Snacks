@@ -46,7 +46,7 @@ namespace Late_Night_Snacks.Controllers
                 };
                 context.Menus.Add(newItem);
                 context.SaveChanges();
-                return Redirect ("Index");
+                return Redirect("Index");
             }
            
             return View(addMenuViewModel);
