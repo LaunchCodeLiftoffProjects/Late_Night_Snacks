@@ -3426,7 +3426,7 @@
     "System.Linq.Queryable/4.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-pr8v/TCnOdwGN3iXqbiNnPS9dOyFsZQug7PtxJsSw9TXPTMQ7TkMD2IzXAJrK7enwtNbzrmvYYEpNXJZFxcyHw==",
+      "sha512": "sha512-W79Ums3BcreGx8tWeVKR2NdHOdDBczzDVw6Gqhr0o/dFnNL1DpUJAcO8HN+G2ZCk1Xho/H+7p1kHdR0C+Zn3fg==",
       "path": "system.linq.queryable/4.0.1",
       "hashPath": "system.linq.queryable.4.0.1.nupkg.sha512"
     },
@@ -3916,14 +3916,14 @@
     "Microsoft.AspNetCore.Razor.Design/2.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-qslnmDEaFHn7ok+xWsqq4YwdKuVIBUV1PAym3OdfXXmMAyI034d5QWPloGDz/i2K2iK3BcFn4qDoBX+xEBAfAg==",
+      "sha512": "sha512-ex8MZwgoyqHim1L6/65FnfjdSMtSKSuSU3DVoiCADZACc05T7f8uRB7SnDIP5LPQKLUBLilfNkd1p14RLyfdQA==",
       "path": "microsoft.aspnetcore.razor.design/2.2.0",
       "hashPath": "microsoft.aspnetcore.razor.design.2.2.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Razor.Language/2.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-zW2jJWCnijyoZqL3a4W5zuvObFluZ7dvZeasbZVhBc8h1ZD4INufdpWXgtxceiu5wqfnedH+mzGTUdM4jNccUQ==",
+      "sha512": "sha512-lyW7L6NFJRSrsRRtfnZu7wzuBWZLroyR8EYRuXnIfjcnhR9EdyEq9rbzguasy/j5fQKbQOfiEDvUsMnDM+ICCA==",
       "path": "microsoft.aspnetcore.razor.language/2.2.0",
       "hashPath": "microsoft.aspnetcore.razor.language.2.2.0.nupkg.sha512"
     },
@@ -4105,7 +4105,7 @@
     "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-z1USM8y2PP5jT9R3fTQtYf8aMHl7NJB05M3GcLuF1wKf8T8sVm5P0X1ywMcPuVh0rd87/zKFG1u5vw9HueAAtg==",
+      "sha512": "sha512-Urt1zec3mHD4FrbOA41HD0gqWd3V1F95lAAwsc2UCj42VDilIFCsCjEIrL0sVom6BZV2EqdbezDCVT15u0gtlA==",
       "path": "microsoft.codeanalysis.analyzers/1.1.0",
       "hashPath": "microsoft.codeanalysis.analyzers.1.1.0.nupkg.sha512"
     },
