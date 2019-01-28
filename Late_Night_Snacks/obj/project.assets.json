@@ -5385,7 +5385,7 @@
       ]
     },
     "Microsoft.AspNetCore.Razor.Design/2.2.0": {
-      "sha512": "qslnmDEaFHn7ok+xWsqq4YwdKuVIBUV1PAym3OdfXXmMAyI034d5QWPloGDz/i2K2iK3BcFn4qDoBX+xEBAfAg==",
+      "sha512": "ex8MZwgoyqHim1L6/65FnfjdSMtSKSuSU3DVoiCADZACc05T7f8uRB7SnDIP5LPQKLUBLilfNkd1p14RLyfdQA==",
       "type": "package",
       "path": "microsoft.aspnetcore.razor.design/2.2.0",
       "files": [
@@ -5409,11 +5409,10 @@
       ]
     },
     "Microsoft.AspNetCore.Razor.Language/2.2.0": {
-      "sha512": "zW2jJWCnijyoZqL3a4W5zuvObFluZ7dvZeasbZVhBc8h1ZD4INufdpWXgtxceiu5wqfnedH+mzGTUdM4jNccUQ==",
+      "sha512": "lyW7L6NFJRSrsRRtfnZu7wzuBWZLroyR8EYRuXnIfjcnhR9EdyEq9rbzguasy/j5fQKbQOfiEDvUsMnDM+ICCA==",
       "type": "package",
       "path": "microsoft.aspnetcore.razor.language/2.2.0",
       "files": [
-        ".nupkg.metadata",
         ".signature.p7s",
         "lib/net46/Microsoft.AspNetCore.Razor.Language.dll",
         "lib/net46/Microsoft.AspNetCore.Razor.Language.xml",
@@ -5767,11 +5766,10 @@
       ]
     },
     "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
-      "sha512": "z1USM8y2PP5jT9R3fTQtYf8aMHl7NJB05M3GcLuF1wKf8T8sVm5P0X1ywMcPuVh0rd87/zKFG1u5vw9HueAAtg==",
+      "sha512": "Urt1zec3mHD4FrbOA41HD0gqWd3V1F95lAAwsc2UCj42VDilIFCsCjEIrL0sVom6BZV2EqdbezDCVT15u0gtlA==",
       "type": "package",
       "path": "microsoft.codeanalysis.analyzers/1.1.0",
       "files": [
-        ".nupkg.metadata",
         "ThirdPartyNotices.rtf",
         "analyzers/dotnet/cs/Microsoft.CodeAnalysis.Analyzers.dll",
         "analyzers/dotnet/cs/Microsoft.CodeAnalysis.CSharp.Analyzers.dll",
@@ -9278,11 +9276,10 @@
       ]
     },
     "System.Linq.Queryable/4.0.1": {
-      "sha512": "pr8v/TCnOdwGN3iXqbiNnPS9dOyFsZQug7PtxJsSw9TXPTMQ7TkMD2IzXAJrK7enwtNbzrmvYYEpNXJZFxcyHw==",
+      "sha512": "W79Ums3BcreGx8tWeVKR2NdHOdDBczzDVw6Gqhr0o/dFnNL1DpUJAcO8HN+G2ZCk1Xho/H+7p1kHdR0C+Zn3fg==",
       "type": "package",
       "path": "system.linq.queryable/4.0.1",
       "files": [
-        ".nupkg.metadata",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/monoandroid10/_._",
@@ -12129,23 +12126,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tyron\\.nuget\\packages\\": {},
+    "C:\\Users\\theof\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tyron\\Source\\Repos\\LaunchCodeLiftoffProjects\\Late_Night_Snacks\\Late_Night_Snacks\\Late_Night_Snacks.csproj",
+      "projectUniqueName": "C:\\Users\\theof\\lc101\\liftoff\\Late_Night_Snacks\\Late_Night_Snacks\\Late_Night_Snacks.csproj",
       "projectName": "Late_Night_Snacks",
-      "projectPath": "C:\\Users\\tyron\\Source\\Repos\\LaunchCodeLiftoffProjects\\Late_Night_Snacks\\Late_Night_Snacks\\Late_Night_Snacks.csproj",
-      "packagesPath": "C:\\Users\\tyron\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tyron\\Source\\Repos\\LaunchCodeLiftoffProjects\\Late_Night_Snacks\\Late_Night_Snacks\\obj\\",
+      "projectPath": "C:\\Users\\theof\\lc101\\liftoff\\Late_Night_Snacks\\Late_Night_Snacks\\Late_Night_Snacks.csproj",
+      "packagesPath": "C:\\Users\\theof\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\theof\\lc101\\liftoff\\Late_Night_Snacks\\Late_Night_Snacks\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\tyron\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\theof\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
