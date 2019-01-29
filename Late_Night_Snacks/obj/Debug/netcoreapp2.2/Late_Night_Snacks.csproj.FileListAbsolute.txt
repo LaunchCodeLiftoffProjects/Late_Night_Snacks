@@ -102,5 +102,3 @@ C:\Users\theof\lc101\liftoff\Late_Night_Snacks\Late_Night_Snacks\obj\Debug\netco
 C:\Users\theof\lc101\liftoff\Late_Night_Snacks\Late_Night_Snacks\obj\Debug\netcoreapp2.2\Late_Night_Snacks.dll
 C:\Users\theof\lc101\liftoff\Late_Night_Snacks\Late_Night_Snacks\obj\Debug\netcoreapp2.2\Late_Night_Snacks.pdb
 C:\Users\theof\lc101\liftoff\Late_Night_Snacks\Late_Night_Snacks\obj\Debug\netcoreapp2.2\Late_Night_Snacks.csproj.CopyComplete
-C:\Users\theof\lc101\liftoff\Late_Night_Snacks\Late_Night_Snacks\obj\Debug\netcoreapp2.2\Razor\Late_Night_Snacks\Views\Menu\AddMenu.g.cshtml.cs
-C:\Users\theof\lc101\liftoff\Late_Night_Snacks\Late_Night_Snacks\obj\Debug\netcoreapp2.2\Razor\Late_Night_Snacks\Views\Menu\Index.g.cshtml.cs
