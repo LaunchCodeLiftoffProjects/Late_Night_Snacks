@@ -1,17 +1,68 @@
-﻿@{
-    ViewData["Title"] = "Contact";
-}
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
+﻿@model Late_Night_Snacks.ViewModels.ContactViewModel
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-
-<address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 style="font-family:'Abril Fatface';text-align:center;margin:30px auto;">Our Contact Info</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-9">
+            <iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=mentor%20center&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+        </div>
+        <div class="col-md-3">
+            <h2 style="font-family:'Asap Condensed';font-weight:500;">Office Address</h2>
+            <h4 style="font-family:'Asap Condensed';">4811 Delmar Blvd<br />St. Louis, MO 63108</h4>
+            <h2 style="font-family:'Asap Condensed';font-weight:500;">Email</h2>
+            <h4 style="font-family:'Asap Condensed';">latenightsnacks@gmail.com</h4>
+            <h2 style="font-family:'Asap Condensed';font-weight:500;">Phone Number</h2>
+            <h4 style="font-family:'Asap Condensed';">314.254.0107</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h1 style="font-family:'Abril Fatface';text-align:center;margin:30px auto;">Contact Form</h1>
+        </div>
+    </div>
+    <form method="post">
+        <div asp-validation-summary="All"></div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Name" class="col-md-3 right">Name:</label>
+                    <div class="col-md-9">
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Email" class="col-md-3 right">Email:</label>
+                    <div class="col-md-9">
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label asp-for="Message" class="col-md-3 right">Message:</label>
+                    <div class="col-md-9">
+                        <textarea asp-for="Message" rows="6" class="form-control"></textarea>
+                        <span asp-validation-for="Message"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input type="submit" value="Send" />
+            </div>
+        </div>
+    </form>
+</div>

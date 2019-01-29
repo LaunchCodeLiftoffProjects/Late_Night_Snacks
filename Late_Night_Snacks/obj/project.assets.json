@@ -12993,6 +12993,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "Microsoft.AspNetCore >= 2.2.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 2.2.1",
@@ -13043,11 +13044,13 @@
     "frameworks": {
       "netcoreapp2.2": {
         "dependencies": {
-          "Microsoft.AspNetCore.App": {
-            "suppressParent": "All",
+          "Microsoft.AspNetCore": {
             "target": "Package",
-            "version": "[2.2.0, )",
-            "autoReferenced": true
+            "version": "[2.2.0, )"
+          },
+          "Microsoft.AspNetCore.App": {
+            "target": "Package",
+            "version": "[2.2.0, )"
           },
           "Microsoft.AspNetCore.Razor.Design": {
             "suppressParent": "All",
