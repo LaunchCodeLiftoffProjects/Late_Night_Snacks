@@ -8,6 +8,10 @@ namespace Late_Night_Snacks.ViewModels
 {
     public class AddMenuViewModel
     {
+        public AddMenuViewModel()
+        {
+        }
+
         [Required]
         [Display(Name = "Menu Item")]
         public string MenuItem { get; set; }
