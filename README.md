@@ -39,7 +39,7 @@ Our biggest hurdle would be learning on how to implement different APIs. Besides
 - Ismail Adiputra
 - Jake Schaefer
 - Jennifer Flores
-
+- Tyrone Garner II
 ### Wireframes
 
 We creted our wireframes via moqups. Here are our [wireframes](https://app.moqups.com/ifamvd/qzhPSdBaNh/edit/page/ad64222d5).
