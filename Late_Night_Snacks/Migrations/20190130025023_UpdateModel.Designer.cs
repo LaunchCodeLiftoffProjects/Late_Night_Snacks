@@ -3,14 +3,16 @@ using Late_Night_Snacks.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Late_Night_Snacks.Migrations
 {
     [DbContext(typeof(MenuDbContext))]
-    partial class MenuDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190130025023_UpdateModel")]
+    partial class UpdateModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

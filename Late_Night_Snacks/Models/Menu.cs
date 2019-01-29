@@ -8,7 +8,7 @@ namespace Late_Night_Snacks.Models
     public class Menu
     {
         public string MenuItem { get; set; }
-        public int Price { get; set; }
+        public string Price { get; set; }
         public int ID { get; set; }
        
 
