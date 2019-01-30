@@ -2,10 +2,10 @@
 
 <form method="post">
 
-    @foreach (var menu in ViewBag.menus)
+    @foreach (var menu in ViewBag.MenuItems)
     {
         <input type="checkbox" name="menuIds" id="@menu.ID" value="@menu.ID" />
-        <label for="@menu.ID">@menu.MenuItem</label>
+        <label for="@menu.ID">@menu.Name</label>
         <br />
     }
 
