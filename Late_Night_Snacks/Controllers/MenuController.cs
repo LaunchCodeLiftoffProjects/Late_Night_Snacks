@@ -13,9 +13,9 @@ namespace Late_Night_Snacks.Controllers
 {
     public class MenuController : Controller
     {
-        private MenuDbContext context;
+        private MenuItemsDbContext context;
 
-        public MenuController(MenuDbContext dbContext)
+        public MenuController(MenuItemsDbContext dbContext)
         {
             context = dbContext;
         }
@@ -23,7 +23,7 @@ namespace Late_Night_Snacks.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            ViewBag.menus = context.Menus.ToList();
+            ViewBag.MenuItems = context.MenuItems.ToList();
             return View();
         }
 
@@ -39,13 +39,15 @@ namespace Late_Night_Snacks.Controllers
         {
             if (ModelState.IsValid)
             {
-                Menu newItem = new Menu()
+                MenuItem newItem = new MenuItem()
                 {
-                    MenuItem = addMenuViewModel.MenuItem,
+                    Name = addMenuViewModel.Name,
+                    Description = addMenuViewModel.Description,
                     Price = addMenuViewModel.Price,
-                    Qty = addMenuViewModel.Qty
+                    Quantity = addMenuViewModel.Quantity, 
+                    
                 };
-                context.Menus.Add(newItem);
+                context.MenuItems.Add(newItem);
                 context.SaveChanges();
                 return Redirect("Index");
             }
@@ -56,7 +58,7 @@ namespace Late_Night_Snacks.Controllers
         public IActionResult Remove()
         {
             ViewBag.title = "Remove Menu.";
-            ViewBag.menus = context.Menus.ToList();
+            ViewBag.MenuItems = context.MenuItems.ToList();
             return View();
         }
         [HttpPost]
@@ -64,8 +66,8 @@ namespace Late_Night_Snacks.Controllers
         {
             foreach(int menuId in menuIds)
             {
-                Menu theItem = context.Menus.Single(x => x.ID == menuId);
-                context.Menus.Remove(theItem);
+                MenuItem theItem = context.MenuItems.Single(x => x.ID == menuId);
+                context.MenuItems.Remove(theItem);
             }
             context.SaveChanges();
             return Redirect("/");

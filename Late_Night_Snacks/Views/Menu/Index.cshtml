@@ -4,20 +4,23 @@
 
 <table class="table">
     <tr>
-        <th>Item</th>
+        <th>Name</th>
+        <th>Description</th>
         <th>Price</th>
+        <th>Quantity</th>
     </tr>
-    @foreach(Menu m in ViewBag.menus)
+    @foreach(MenuItem m in ViewBag.MenuItems)
     {
         <tr>
-            <td>@m.MenuItem</td>
+            <td>@m.Name</td>
+            <td>@m.Description</td>
             <td>@m.Price</td>
-            <td>@m.Qty</td>
+            <td>@m.Quantity</td>
         </tr>
     }
 </table>
 
-@if(ViewBag.menus.Count == 0)
+@if(ViewBag.MenuItems.Count == 0)
 {
     <p>NO FOOD FOR YOU!!!!</p>
 }
