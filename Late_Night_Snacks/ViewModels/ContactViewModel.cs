@@ -6,16 +6,15 @@ using System.Threading.Tasks;
 
 namespace Late_Night_Snacks.ViewModels
 {
-    public class AddMenuViewModel
+    public class ContactViewModel
     {
         [Required]
-        [Display(Name = "Menu Item")]
-        public string MenuItem { get; set; }
+        public string Name { get; set; }
 
         [Required]
-        [Display(Name = "Menu Price")]
-        public int Price { get; set; }
+        public string Email { get; set; }
 
-        public int Id { get; set; }
+        [Required]
+        public string Message { get; set; }
     }
 }

@@ -39,14 +39,14 @@ namespace Late_Night_Snacks.Controllers
         {
             if (ModelState.IsValid)
             {
-                Menu newItem = new Menu
+                Menu newItem = new Menu()
                 {
                     MenuItem = addMenuViewModel.MenuItem,
                     Price = addMenuViewModel.Price
                 };
                 context.Menus.Add(newItem);
                 context.SaveChanges();
-                return View("Index", newItem);
+                return Redirect("Index");
             }
            
             return View(addMenuViewModel);
