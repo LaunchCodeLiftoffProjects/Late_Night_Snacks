@@ -16,6 +16,10 @@ namespace Late_Night_Snacks.ViewModels
         [Display(Name = "Menu Price")]
         public decimal Price { get; set; }
 
+        [Required]
+        [Display(Name = "Quantity")]
+        public int Qty { get; set; }
+
         public int Id { get; set; }
     }
 }

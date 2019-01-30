@@ -42,7 +42,8 @@ namespace Late_Night_Snacks.Controllers
                 Menu newItem = new Menu()
                 {
                     MenuItem = addMenuViewModel.MenuItem,
-                    Price = addMenuViewModel.Price
+                    Price = addMenuViewModel.Price,
+                    Qty = addMenuViewModel.Qty
                 };
                 context.Menus.Add(newItem);
                 context.SaveChanges();
