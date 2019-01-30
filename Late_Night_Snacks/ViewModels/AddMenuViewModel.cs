@@ -9,16 +9,20 @@ namespace Late_Night_Snacks.ViewModels
     public class AddMenuViewModel
     {
         [Required]
-        [Display(Name = "Menu Item")]
-        public string MenuItem { get; set; }
+        [Display(Name = "New Menu Item")]
+        public string Name { get; set; }
 
         [Required]
-        [Display(Name = "Menu Price")]
+        [Display(Name = "Description")]
+        public string Description { get; set; }
+
+        [Required]
+        [Display(Name = "Price")]
         public decimal Price { get; set; }
 
         [Required]
         [Display(Name = "Quantity")]
-        public int Qty { get; set; }
+        public int Quantity { get; set; }
 
         public int Id { get; set; }
     }
