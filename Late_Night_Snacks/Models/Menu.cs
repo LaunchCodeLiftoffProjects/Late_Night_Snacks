@@ -9,6 +9,7 @@ namespace Late_Night_Snacks.Models
     {
         public string MenuItem { get; set; }
         public decimal Price { get; set; }
+        public int Qty { get; set; }
         public int ID { get; set; }
        
 
