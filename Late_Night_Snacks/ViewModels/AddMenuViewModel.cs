@@ -14,7 +14,7 @@ namespace Late_Night_Snacks.ViewModels
 
         [Required]
         [Display(Name = "Menu Price")]
-        public int Price { get; set; }
+        public decimal Price { get; set; }
 
         public int Id { get; set; }
     }
