@@ -15,7 +15,7 @@ namespace Late_Night_Snacks.ViewModels
         [Required]
         [Display(Name = "Menu Price")]
         //[DisplayFormat(DataFormatString = "{0:C0}", ApplyFormatInEditMode = true)]
-        public string Price { get; set; }
+        public decimal Price { get; set; }
 
         public int Id { get; set; }
     }
