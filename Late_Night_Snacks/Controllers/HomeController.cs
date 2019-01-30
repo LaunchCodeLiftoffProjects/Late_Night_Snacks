@@ -34,7 +34,7 @@ namespace Late_Night_Snacks.Controllers
         [HttpPost]
         public IActionResult Contact(ContactViewModel contactViewModel)
         {
-            if (ModelState.IsValid)
+           /* if (ModelState.IsValid)
             {
                 var mailbody =
                     $@"Hello owner,
@@ -63,7 +63,7 @@ namespace Late_Night_Snacks.Controllers
                     }
                 }
                 return View();
-            }
+            }*/
             return View(contactViewModel);
         }
 
