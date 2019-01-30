@@ -26,7 +26,7 @@ namespace Late_Night_Snacks.Migrations
 
                     b.Property<string>("MenuItem");
 
-                    b.Property<decimal>("Price");
+                    b.Property<string>("Price");
 
                     b.HasKey("ID");
 
