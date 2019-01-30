@@ -3,14 +3,16 @@ using Late_Night_Snacks.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Late_Night_Snacks.Migrations
 {
-    [DbContext(typeof(MenuDbContext))]
-    partial class MenuDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(MenuItemsDbContext))]
+    [Migration("20190130185302_RestructureMenuItemsDB")]
+    partial class RestructureMenuItemsDB
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -18,21 +20,23 @@ namespace Late_Night_Snacks.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Late_Night_Snacks.Models.Menu", b =>
+            modelBuilder.Entity("Late_Night_Snacks.Models.MenuItem", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("MenuItem");
+                    b.Property<string>("Description");
+
+                    b.Property<string>("Name");
 
                     b.Property<decimal>("Price");
 
-                    b.Property<int>("Qty");
+                    b.Property<int>("Quantity");
 
                     b.HasKey("ID");
 
-                    b.ToTable("Menus");
+                    b.ToTable("MenuItems");
                 });
 #pragma warning restore 612, 618
         }

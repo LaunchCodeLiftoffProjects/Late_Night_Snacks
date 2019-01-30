@@ -8,9 +8,9 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Late_Night_Snacks.Migrations
 {
-    [DbContext(typeof(MenuDbContext))]
-    [Migration("20190128203918_Menu")]
-    partial class Menu
+    [DbContext(typeof(MenuItemsDbContext))]
+    [Migration("20190130185750_NewMenuItemsDB")]
+    partial class NewMenuItemsDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,19 +20,23 @@ namespace Late_Night_Snacks.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Late_Night_Snacks.Models.Menu", b =>
+            modelBuilder.Entity("Late_Night_Snacks.Models.MenuItem", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("MenuItem");
+                    b.Property<string>("Description");
 
-                    b.Property<int>("Price");
+                    b.Property<string>("Name");
+
+                    b.Property<decimal>("Price");
+
+                    b.Property<int>("Quantity");
 
                     b.HasKey("ID");
 
-                    b.ToTable("Menus");
+                    b.ToTable("MenuItems");
                 });
 #pragma warning restore 612, 618
         }

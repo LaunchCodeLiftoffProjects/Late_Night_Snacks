@@ -2,7 +2,7 @@
 
 namespace Late_Night_Snacks.Migrations
 {
-    public partial class Menu : Migration
+    public partial class NewMenuItemsDB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

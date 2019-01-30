@@ -4,9 +4,14 @@
 
 <form asp-controller="Menu" asp-action="AddMenu" method="post">
     <div class="form-group">
-        <label asp-for="MenuItem"></label>
-        <input asp-for="MenuItem" class="form-control" />
-        <span asp-validation-for="MenuItem"></span>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <input asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description"></span>
     </div>
     <div class="form-group">
         <label asp-for="Price"></label>
@@ -14,9 +19,9 @@
         <span asp-validation-for="Price"></span>
     </div>
     <div class="form-group">
-        <label asp-for="Qty"></label>
-        <input asp-for="Qty" class="form-control" />
-        <span asp-validation-for="Qty"></span>
+        <label asp-for="Quantity"></label>
+        <input asp-for="Quantity" class="form-control" />
+        <span asp-validation-for="Quantity"></span>
     </div>
     <input type="submit" value="Add Menu Item" />
 </form>
