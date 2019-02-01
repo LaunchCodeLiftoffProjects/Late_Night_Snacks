@@ -3,16 +3,14 @@ using Late_Night_Snacks.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Late_Night_Snacks.Migrations
 {
     [DbContext(typeof(MenuItemsDbContext))]
-    [Migration("20190130185750_NewMenuItemsDB")]
-    partial class NewMenuItemsDB
+    partial class MenuItemsDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -37,6 +35,16 @@ namespace Late_Night_Snacks.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("MenuItems");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = -1,
+                            Description = "Mouthwatering",
+                            Name = "Ribs",
+                            Price = 24.99m,
+                            Quantity = 1
+                        });
                 });
 #pragma warning restore 612, 618
         }

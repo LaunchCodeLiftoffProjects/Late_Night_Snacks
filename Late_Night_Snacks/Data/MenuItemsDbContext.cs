@@ -1,5 +1,6 @@
 ﻿using Late_Night_Snacks.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,11 +15,23 @@ namespace Late_Night_Snacks.Data
         public MenuItemsDbContext(DbContextOptions<MenuItemsDbContext> options)
             : base(options)
         {
-            Database.SetInitializer<MenuItemsDBContext>(new CreateDatabaseIfNotExists<MenuItemsDBContext>());
-
-            //Database.SetInitializer<SchoolDBContext>(new DropCreateDatabaseIfModelChanges<SchoolDBContext>());
-            //Database.SetInitializer<SchoolDBContext>(new DropCreateDatabaseAlways<SchoolDBContext>());
-            //Database.SetInitializer<SchoolDBContext>(new SchoolDBInitializer());
+           
         }
+        /*protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            builder.Entity<MenuItem>().HasData(
+                new MenuItem
+                {
+                    ID = -1,
+                    Name = "Ribs",
+                    Description = "Mouthwatering",
+                    Price = 24.99M,
+                    Quantity = 1,
+                   
+                }
+            );
+        }*/
+
     }
 }

@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace Late_Night_Snacks.Migrations
+namespace Late_Night_Snacks.Data.Migrations
 {
     [DbContext(typeof(MenuItemsDbContext))]
-    [Migration("20190130185302_RestructureMenuItemsDB")]
-    partial class RestructureMenuItemsDB
+    [Migration("20190131232813_SeedData")]
+    partial class SeedData
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -37,6 +37,16 @@ namespace Late_Night_Snacks.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("MenuItems");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = -1,
+                            Description = "Mouthwatering",
+                            Name = "Ribs",
+                            Price = 24.99m,
+                            Quantity = 1
+                        });
                 });
 #pragma warning restore 612, 618
         }
