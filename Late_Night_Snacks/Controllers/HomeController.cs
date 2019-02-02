@@ -25,6 +25,12 @@ namespace Late_Night_Snacks.Controllers
             return View();
         }
 
+        public IActionResult Map()
+        {
+            return View();
+        }
+
+
         public IActionResult Contact()
         {
             ContactViewModel contactViewModel = new ContactViewModel();
