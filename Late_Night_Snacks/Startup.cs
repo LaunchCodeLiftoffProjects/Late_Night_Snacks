@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Late_Night_Snacks.Data;
+using Late_Night_Snacks.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -34,7 +35,7 @@ namespace Late_Night_Snacks
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, MenuItemsDbContext context)
         {
             if (env.IsDevelopment())
             {
@@ -49,6 +50,12 @@ namespace Late_Night_Snacks
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+
+            
+            
+            DBSeeder.SeedDB(context);
+            
+            
 
             app.UseMvc(routes =>
             {
