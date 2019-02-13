@@ -73,6 +73,12 @@ namespace Late_Night_Snacks.Controllers
             return View(contactViewModel);
         }
 
+
+        public IActionResult Payment()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
