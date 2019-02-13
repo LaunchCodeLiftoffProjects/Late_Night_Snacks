@@ -8,16 +8,19 @@ using Late_Night_Snacks.Models;
 using Late_Night_Snacks.ViewModels;
 using System.Net.Mail;
 using System.Net;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Late_Night_Snacks.Controllers
 {
     public class HomeController : Controller
-    {
+    { 
+
         public IActionResult Index()
         {
             return View();
         }
 
+    
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
@@ -25,12 +28,14 @@ namespace Late_Night_Snacks.Controllers
             return View();
         }
 
+  
         public IActionResult Map()
         {
             return View();
         }
 
 
+  
         public IActionResult Contact()
         {
             ContactViewModel contactViewModel = new ContactViewModel();
@@ -71,6 +76,12 @@ namespace Late_Night_Snacks.Controllers
                 return View();
             }*/
             return View(contactViewModel);
+        }
+
+
+        public IActionResult Payment()
+        {
+            return View();
         }
 
         public IActionResult Privacy()
