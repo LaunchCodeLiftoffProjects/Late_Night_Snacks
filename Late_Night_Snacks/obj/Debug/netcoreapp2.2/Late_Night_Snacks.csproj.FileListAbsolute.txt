@@ -137,3 +137,4 @@ C:\Users\ismailadiputra\Source\Repos\LaunchCodeLiftoffProjects\Late_Night_Snacks
 C:\Users\ismailadiputra\Source\Repos\LaunchCodeLiftoffProjects\Late_Night_Snacks\Late_Night_Snacks\obj\Debug\netcoreapp2.2\Late_Night_Snacks.dll
 C:\Users\ismailadiputra\Source\Repos\LaunchCodeLiftoffProjects\Late_Night_Snacks\Late_Night_Snacks\obj\Debug\netcoreapp2.2\Late_Night_Snacks.pdb
 C:\Users\ismailadiputra\Source\Repos\LaunchCodeLiftoffProjects\Late_Night_Snacks\Late_Night_Snacks\obj\Debug\netcoreapp2.2\Late_Night_Snacks.csproj.CopyComplete
+C:\Users\tyron\source\repos\LaunchCodeLiftoffProjects\Late_Night_Snacks\Late_Night_Snacks\obj\Debug\netcoreapp2.2\Razor\Views\Calendar\Index.g.cshtml.cs

@@ -10,6 +10,7 @@ namespace Late_Night_Snacks.Data
     public class MenuDbContext : DbContext
     {
         public DbSet<Menu> Menus { get; set; }
+        public DbSet<CalendarEvent> Events { get; set; }
 
         public MenuDbContext(DbContextOptions<MenuDbContext> options)
             : base(options)
