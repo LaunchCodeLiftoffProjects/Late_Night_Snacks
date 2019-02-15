@@ -11,6 +11,7 @@ namespace Late_Night_Snacks.Data
     public class MenuItemsDbContext : DbContext
     {
         public DbSet<MenuItem> MenuItems { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
         public MenuItemsDbContext(DbContextOptions<MenuItemsDbContext> options)
             : base(options)

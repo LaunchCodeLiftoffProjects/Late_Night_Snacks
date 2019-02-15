@@ -21,18 +21,34 @@ namespace Late_Night_Snacks.Controllers
         }
 
         // GET: /<controller>/
+
+        [HttpGet]
         public IActionResult Index()
         {
+            ViewBag.Orders = context.Orders.ToList();
             return View();
         }
 
-        public IActionResult CreateOrder(OrderViewModel orderViewModel)
+
+        // GET: /<controller>/
+        public IActionResult CreateOrder()
         {
+            ViewBag.MenuItems = context.MenuItems.ToList();
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CreateOrder(OrderViewModel orderViewModel, int[] itemsToAdd)
+        {
+            ViewBag.MenuItems = context.MenuItems.ToList();
+
             List<MenuItem> aList = new List<MenuItem>();
 
-            foreach (MenuItem menuItem in orderViewModel.MenuItems)
+
+
+            foreach (int item in itemsToAdd)
             {
-                aList.Add(menuItem);
+                aList.Add(context.MenuItems.Single(x => x.ID == item));
             }
 
             Order order = new Order()

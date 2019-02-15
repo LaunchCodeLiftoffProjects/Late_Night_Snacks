@@ -1,21 +1,7 @@
 ﻿
 <h1>Your Order</h1>
 
-@if (ViewBag.Order.Count == 0)
+@if (ViewBag.Orders.Count == 0)
 {
     <P>No orders yet</P>
 }
-
-<h3>Order for @ViewBag.Order.CustomerName</h3>
-
-<table class="table">
-    <tr>
-        <th>Items</th>
-    </tr>
-    @foreach (MenuItem m in ViewBag.Order.MenuItems)
-    {
-        <tr>
-            <td>@m.Name</td>
-        </tr>
-    }
-</table>
