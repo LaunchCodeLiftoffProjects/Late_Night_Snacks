@@ -1,0 +1,12 @@
+﻿@model Late_Night_Snacks.ViewModels.AddOrderMenuItemViewModel
+
+<div class="container">
+    <div class="row">
+        <form asp-controller="Order" asp-action="AddOrderMenuItem" method="post">
+            <label asp-for="MenuItemId"></label> 
+            <select asp-for="MenuItemId" asp-items="Model.MenuItems"></select>
+            <span asp-validation-for="MenuItemId"></span>
+            <input type="submit" value="Add Item" />
+        </form>
+    </div>
+</div>

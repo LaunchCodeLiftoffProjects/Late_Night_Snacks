@@ -13,7 +13,7 @@ namespace Late_Night_Snacks.Models
         public int Quantity { get; set; }
         public int ID { get; set; }
        
-
+        public IList<OrderMenuItem> OrderMenuItems { get; set; }
 
     }
 }

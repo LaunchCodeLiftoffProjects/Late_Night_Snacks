@@ -6,6 +6,7 @@ using Late_Night_Snacks.Data;
 using Late_Night_Snacks.Models;
 using Late_Night_Snacks.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -22,44 +23,88 @@ namespace Late_Night_Snacks.Controllers
 
         // GET: /<controller>/
 
-        [HttpGet]
         public IActionResult Index()
         {
-            ViewBag.Orders = context.Orders.ToList();
-            return View();
+            IList<Order> Orders = context.Orders.ToList();
+            return View(Orders);
         }
 
-
-        // GET: /<controller>/
-        public IActionResult CreateOrder()
+        public IActionResult AddOrder()
         {
-            ViewBag.MenuItems = context.MenuItems.ToList();
-            return View();
+            AddOrderViewModel addOrderViewModel = new AddOrderViewModel();
+            return View(addOrderViewModel);
+        }
+        
+        [HttpPost]
+        public IActionResult AddOrder(AddOrderViewModel addOrderViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                Order newOrder = new Order
+                {
+                    CustomerName = addOrderViewModel.CustomerName
+                };
+
+                context.Orders.Add(newOrder);
+                context.SaveChanges();
+
+                return Redirect("/Order/ViewOrder/" + newOrder.Id);
+            }
+            return View(addOrderViewModel);
+        }
+
+        public IActionResult ViewOrder(int id)
+        {
+            Order orderRequested = context.Orders.Single(c => c.Id == id);
+
+            IList<OrderMenuItem> MenuItems = context.OrderMenuItem.Include(item => item.MenuItem).Where(c => c.OrderId == id).ToList();
+
+            ViewOrderViewModel viewOrderViewModel = new ViewOrderViewModel
+            {
+                Order = orderRequested,
+                MenuItems = MenuItems
+            };
+
+            return View(viewOrderViewModel);
+        }
+
+        public IActionResult AddOrderMenuItem(int id)
+        {
+            Order order = context.Orders.Single(c => c.Id == id);
+
+            List<MenuItem> menuItems = context.MenuItems.Include(c => c.OrderMenuItems).ToList();
+
+            AddOrderMenuItemViewModel addOrderMenuItemViewModel = new AddOrderMenuItemViewModel(order, menuItems);
+
+            return View(addOrderMenuItemViewModel);
         }
 
         [HttpPost]
-        public IActionResult CreateOrder(OrderViewModel orderViewModel, int[] itemsToAdd)
+        public IActionResult AddOrderMenuItem (AddOrderMenuItemViewModel addOrderMenuItemViewModel)
         {
-            ViewBag.MenuItems = context.MenuItems.ToList();
-
-            List<MenuItem> aList = new List<MenuItem>();
-
-
-
-            foreach (int item in itemsToAdd)
+            if (ModelState.IsValid)
             {
-                aList.Add(context.MenuItems.Single(x => x.ID == item));
+                if (context.OrderMenuItem
+                    .Where(omi => omi.MenuItemId == addOrderMenuItemViewModel.MenuItemId)
+                    .Where(omi => omi.OrderId == addOrderMenuItemViewModel.OrderId)
+                    .ToList().Count == 0)
+                {
+                    OrderMenuItem orderMenuItem = new OrderMenuItem
+                    {
+                        MenuItemId = addOrderMenuItemViewModel.MenuItemId,
+                        OrderId = addOrderMenuItemViewModel.OrderId
+                    };
+                    context.OrderMenuItem.Add(orderMenuItem);
+                    context.SaveChanges();
+                }
+
+                return Redirect("/Order/ViewOrder/" + addOrderMenuItemViewModel.OrderId);
+
             }
 
-            Order order = new Order()
-            {
-                MenuItems = aList,
-                CustomerName = orderViewModel.CustomerName,
-            };
-
-            return RedirectToAction("Index", order);
-
+            return View(addOrderMenuItemViewModel);
         }
+
 
 
     }

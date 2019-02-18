@@ -11,6 +11,7 @@ namespace Late_Night_Snacks.Models
 
         public string CustomerName { get; set; }
 
-        public List<MenuItem> MenuItems { get; set; }
+        public IList<OrderMenuItem> OrderMenuItems { get; set; }
+
     }
 }
