@@ -11,11 +11,19 @@ namespace Late_Night_Snacks.Data
     public class MenuItemsDbContext : DbContext
     {
         public DbSet<MenuItem> MenuItems { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderMenuItem> OrderMenuItem { get; set; }
 
         public MenuItemsDbContext(DbContextOptions<MenuItemsDbContext> options)
             : base(options)
         {
            
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<OrderMenuItem>()
+                .HasKey(c => new { c.MenuItemId, c.OrderId });
         }
         /*protected override void OnModelCreating(ModelBuilder builder)
         {
