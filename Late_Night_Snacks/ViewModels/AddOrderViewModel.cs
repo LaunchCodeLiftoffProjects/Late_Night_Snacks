@@ -13,5 +13,6 @@ namespace Late_Night_Snacks.ViewModels
         [Display(Name ="Customer Name")]
         public string CustomerName { get; set; }
 
+        public int Id { get; set; }
     }
 }
