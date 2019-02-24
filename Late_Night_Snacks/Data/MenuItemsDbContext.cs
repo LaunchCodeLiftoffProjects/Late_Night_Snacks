@@ -1,5 +1,4 @@
 ﻿using Late_Night_Snacks.Models;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using System;
@@ -12,9 +11,8 @@ namespace Late_Night_Snacks.Data
     public class MenuItemsDbContext : DbContext
     {
         public DbSet<MenuItem> MenuItems { get; set; }
-        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
-        public DbSet<IdentityRole> IdentityRoles { get; set; }
-        
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderMenuItem> OrderMenuItem { get; set; }
 
         public MenuItemsDbContext(DbContextOptions<MenuItemsDbContext> options)
             : base(options)
@@ -22,11 +20,10 @@ namespace Late_Night_Snacks.Data
            
         }
 
-        /*protected override void OnModelCreating(ModelBuilder builder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(builder);
-            builder.Entity<ApplicationUser>().HasMany(p => p.Roles).WithOne().HasForeignKey(prop => prop.UserId).IsRequired();
-
+            modelBuilder.Entity<OrderMenuItem>()
+                .HasKey(c => new { c.MenuItemId, c.OrderId });
         }
         /*protected override void OnModelCreating(ModelBuilder builder)
         {

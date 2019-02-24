@@ -1,0 +1,13 @@
+﻿@model Late_Night_Snacks.ViewModels.AddOrderViewModel
+
+<h1>Your Order</h1>
+
+<div class="OrderBox">
+    <form asp-controller="Order" asp-action="AddOrder" method="post">
+        <label asp-for="CustomerName"></label>
+        <input asp-for="CustomerName" />
+        <span asp-validation-for="CustomerName"></span>
+
+        <input type="submit" value="Create Order" />
+    </form>
+</div>
