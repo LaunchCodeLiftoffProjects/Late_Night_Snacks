@@ -1,5 +1,27 @@
 ﻿<!DOCTYPE html>
 <style>
+    body {
+        background-color: dimgrey;
+    }
+
+    h1 {
+        color: red;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-align: center;
+        text-shadow: 2px 6px 0px #000
+    }
+
+    h2 {
+        color: red;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    p {
+        color: white;
+        font-size: large;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-align: center
+    }
     #calendar-container {
         padding: 10px;
         width: 210px;
@@ -15,14 +37,17 @@
         #calendar-container > div {
             padding: 0;
             margin-bottom: 10px;
+            text-align: center;
         }
 
     #calendar-month-year {
         margin: 5px;
+        text-align: center;
     }
 
     #calendar-dates > table > tr > td {
         padding: 5px;
+        text-align: center;
     }
 </style>
 <script>
@@ -102,13 +127,22 @@
     <link type="text/css" rel="stylesheet" href="style.css">
     <script type="text/javascript" src="script.js"></script>
 </head>
-<body>
+<body background="https://i.imgur.com/yYBsXCo.jpg">
+    <h1>Follow our Calendar of Events to see where we will be next!</h1>
+    <p>The best thing about our truck is that you can pre-order your food whenever you like! Already have
+    tickets for a concert? No problem! Make sure you secure you food order and a time for pickup so you
+    can make sure you will be fed for the event! Your pre-order secures that we will being what you order with 
+    us and ensures you get the meal you want, unlike other trucks who work on a first-come, first-serve basis;
+    we make sure you get what you want and prepare for that head of time! So schedule your orders along with your
+    ticket purchases and you will have both an amazing music and culinary experience with Late-Night Snacks!</p>
     <div id="calendar-container">
         <div id="calendar-header">
             <span id="calendar-month-year"></span>
         </div>
         <div id="calendar-dates">
+            <!--<img src="https://i.imgur.com/PetpE4m.jpg" width="800px" height="400x" text-align:center; />-->
         </div>
+        
     </div>
 </body>
 </html>
