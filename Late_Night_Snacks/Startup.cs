@@ -61,7 +61,7 @@ namespace Late_Night_Snacks
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Menu}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
