@@ -1,20 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Late_Night_Snacks.Data;
-using Late_Night_Snacks.Helpers;
+﻿using Late_Night_Snacks.Data;
 using Late_Night_Snacks.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+
 
 namespace Late_Night_Snacks
 {
@@ -23,6 +16,7 @@ namespace Late_Night_Snacks
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+           
         }
 
         public IConfiguration Configuration { get; }
@@ -30,7 +24,7 @@ namespace Late_Night_Snacks
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<MenuItemsDbContext>(options =>
+            services.AddDbContext<MenuItemsContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             //services.AddDbContext<ApplicationDbContext>(options =>
@@ -54,6 +48,8 @@ namespace Late_Night_Snacks
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
+            // Initialize the product database.
+ 
             //SECOND DB 
             //services.AddDbContext<OrdersContext>(options =>
             //options.UseSqlServer(Configuration.GetConnectionString("OrdersContext")));
@@ -63,7 +59,7 @@ namespace Late_Night_Snacks
 
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, MenuItemsDbContext context)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, MenuItemsContext context)
         {
             if (env.IsDevelopment())
             {
@@ -80,7 +76,7 @@ namespace Late_Night_Snacks
             app.UseCookiePolicy();
 
 
-            DBSeeder.SeedDB(context);
+            MenuItemDatabaseInitializer.Seed(context);
 
 
             app.UseMvc(routes =>

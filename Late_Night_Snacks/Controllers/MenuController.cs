@@ -13,9 +13,9 @@ namespace Late_Night_Snacks.Controllers
 {
     public class MenuController : Controller
     {
-        private MenuItemsDbContext context;
+        private MenuItemsContext context;
 
-        public MenuController(MenuItemsDbContext dbContext)
+        public MenuController(MenuItemsContext dbContext)
         {
             context = dbContext;
         }
@@ -66,7 +66,7 @@ namespace Late_Night_Snacks.Controllers
         {
             foreach(int menuId in menuIds)
             {
-                MenuItem theItem = context.MenuItems.Single(x => x.ID == menuId);
+                MenuItem theItem = context.MenuItems.Single(x => x.MenuItemID == menuId);
                 context.MenuItems.Remove(theItem);
             }
             context.SaveChanges();

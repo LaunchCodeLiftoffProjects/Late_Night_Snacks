@@ -3,3 +3,48 @@
 *@
 @{
 }
+
+<head>
+    <title>Admin Login</title>
+    <style>
+
+        p.error {
+            color: red;
+        }
+    </style>
+</head>
+<center>
+
+        <h1><strong>Admin Login</strong></h1>
+        <p>Please enter your username and password.</p>
+
+        <form action="/validate" method='POST' class="">
+            <fieldset>
+
+                <div class="">
+                    <input name="username" placeholder="Username" type="text" value="{{username}}" />
+                    <p class="error">{{username_error}}</p>
+                </div>
+
+                <div class="">
+                    <input name="password" placeholder="Password" type="password" value="{{password}}" />
+                    <p class="error">{{password_error}}</p>
+                </div>
+
+                <div class="">
+                <input name="confirm_password" placeholder="Re-enter password" type="password" value="{{confirm_password}}" />
+                <p class="error">{{confirm_error}}</p>
+                </div>
+
+                <div class="">
+                    <input name="user_email" placeholder="E-mail" type="text" value="{{user_email}}" />
+                    <p class="error">{{email_error}}</p>
+                </div>
+
+                <div class="">
+                    <button type="submit" class="">Submit</button>
+                </div>
+
+            </fieldset>
+        </form>
+</center>

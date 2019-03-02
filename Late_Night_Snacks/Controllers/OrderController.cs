@@ -14,9 +14,9 @@ namespace Late_Night_Snacks.Controllers
 {
     public class OrderController : Controller
     {
-        private MenuItemsDbContext context;
+        /*private MenuItemsContext context;
 
-        public OrderController(MenuItemsDbContext dbContext)
+        public OrderController(MenuItemsContext dbContext)
         {
             context = dbContext;
         }
@@ -72,7 +72,7 @@ namespace Late_Night_Snacks.Controllers
         {
             Order order = context.Orders.Single(c => c.Id == id);
 
-            List<MenuItem> menuItems = context.MenuItems.Include(c => c.OrderMenuItems).ToList();
+            List<MenuItem> menuItems = context.MenuItems.Include(c => c.MenuItemID).ToList();
 
             AddOrderMenuItemViewModel addOrderMenuItemViewModel = new AddOrderMenuItemViewModel(order, menuItems);
 
@@ -106,6 +106,6 @@ namespace Late_Night_Snacks.Controllers
         }
 
 
-
+    */
     }
 }

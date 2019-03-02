@@ -35,7 +35,7 @@ namespace Late_Night_Snacks.ViewModels
             {
                 MenuItems.Add(new SelectListItem
                 {
-                    Value = menuItem.ID.ToString(),
+                    Value = menuItem.MenuItemID.ToString(),
                     Text = menuItem.Name
                 });
             }
