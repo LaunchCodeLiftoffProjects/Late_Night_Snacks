@@ -5,12 +5,14 @@ using System.Threading.Tasks;
 using Late_Night_Snacks.Data;
 using Late_Night_Snacks.Models;
 using Late_Night_Snacks.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Late_Night_Snacks.Controllers
 {
+    [Authorize]
     public class MenuController : Controller
     {
         private MenuItemsDbContext context;
@@ -21,6 +23,7 @@ namespace Late_Night_Snacks.Controllers
         }
 
         // GET: /<controller>/
+        [AllowAnonymous]
         public IActionResult Index()
         {
             ViewBag.MenuItems = context.MenuItems.ToList();
