@@ -33,33 +33,20 @@ namespace Late_Night_Snacks
             services.AddDbContext<MenuItemsDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            //services.AddDbContext<ApplicationDbContext>(options =>
-            //options.UseInMemoryDatabase("CustomDB"));
+           
+            services.AddDistributedMemoryCache();
 
-        
-
-            //services.AddIdentity<ApplicationUser, IdentityRole>()
-                //.AddRoleManager<ApplicationRoleManager>();
-
-            // Add application services.
-            
-
-            services.AddMvc();
-            services.AddAuthorization(options =>
+            services.AddSession(options =>
             {
-                options.AddPolicy("RequireAdminRole", policy => policy.RequireRole("Admin"));
+                // Set a short timeout for easy testing.
+                options.IdleTimeout = TimeSpan.FromSeconds(10);
+                options.Cookie.HttpOnly = true;
             });
 
-
-
+            services.AddMvc();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
-            //SECOND DB 
-            //services.AddDbContext<OrdersContext>(options =>
-            //options.UseSqlServer(Configuration.GetConnectionString("OrdersContext")));
+         
         }
-
-
 
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -75,20 +62,22 @@ namespace Late_Night_Snacks
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
+            app.UseHttpsRedirection();  
             app.UseCookiePolicy();
-
-
-            DBSeeder.SeedDB(context);
-
-
+            app.UseSession();
+            app.UseStaticFiles();
+            app.UseAuthentication();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            DBSeeder.SeedDB(context);
+
+
+            
 
         }
 

@@ -20,7 +20,4 @@
   <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.1" />
   <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.2.0" />
 </ItemGroup>
-<ItemGroup>
-  <Folder Include="Migrations\" />
-</ItemGroup>
 </Project>
