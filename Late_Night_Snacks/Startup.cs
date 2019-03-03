@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Late_Night_Snacks.Data;
 using Late_Night_Snacks.Helpers;
 using Late_Night_Snacks.Models;
-using Late_Night_Snacks.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -37,15 +36,13 @@ namespace Late_Night_Snacks
             //services.AddDbContext<ApplicationDbContext>(options =>
             //options.UseInMemoryDatabase("CustomDB"));
 
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<MenuItemsDbContext>()
-                .AddDefaultTokenProviders();
+        
 
             //services.AddIdentity<ApplicationUser, IdentityRole>()
                 //.AddRoleManager<ApplicationRoleManager>();
 
             // Add application services.
-            services.AddTransient<IEmailSender, EmailSender>();
+            
 
             services.AddMvc();
             services.AddAuthorization(options =>
