@@ -7,11 +7,11 @@ namespace Late_Night_Snacks.Models
 {
     public class Order
     {
-        public int Id { get; set; }
-
+        public int OrderId { get; set; }
         public string CustomerName { get; set; }
-
-        public IList<OrderMenuItem> OrderMenuItems { get; set; }
+        public DateTime OrderDate { get; set; }
+        public decimal Total { get; set; }
+        public List<OrderDetail> OrderDetails { get; set; }
 
     }
 }

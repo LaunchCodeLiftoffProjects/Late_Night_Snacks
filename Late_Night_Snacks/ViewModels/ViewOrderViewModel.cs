@@ -9,6 +9,6 @@ namespace Late_Night_Snacks.ViewModels
     public class ViewOrderViewModel
     {
         public Order Order { get; set; }
-        public IList<OrderMenuItem> MenuItems { get; set; }
+        public IList<OrderDetail> MenuItems { get; set; }
     }
 }

@@ -48,16 +48,16 @@ namespace Late_Night_Snacks.Controllers
                 context.Orders.Add(newOrder);
                 context.SaveChanges();
 
-                return Redirect("/Order/ViewOrder/" + newOrder.Id);
+                return Redirect("/Order/ViewOrder/" + newOrder.OrderId);
             }
             return View(addOrderViewModel);
         }
 
         public IActionResult ViewOrder(int id)
         {
-            Order orderRequested = context.Orders.Single(c => c.Id == id);
+            Order orderRequested = context.Orders.Single(c => c.OrderId == id);
 
-            IList<OrderMenuItem> MenuItems = context.OrderMenuItem.Include(item => item.MenuItem).Where(c => c.OrderId == id).ToList();
+            IList<OrderDetail> MenuItems = context.OrderDetails.Include(item => item.MenuItem).Where(c => c.OrderId == id).ToList();
 
             ViewOrderViewModel viewOrderViewModel = new ViewOrderViewModel
             {
@@ -70,9 +70,9 @@ namespace Late_Night_Snacks.Controllers
 
         public IActionResult AddOrderMenuItem(int id)
         {
-            Order order = context.Orders.Single(c => c.Id == id);
+            Order order = context.Orders.Single(c => c.OrderId == id);
 
-            List<MenuItem> menuItems = context.MenuItems.Include(c => c.OrderMenuItems).ToList();
+            List<MenuItem> menuItems = context.MenuItems.Include(c => c.OrderDetails).ToList();
 
             AddOrderMenuItemViewModel addOrderMenuItemViewModel = new AddOrderMenuItemViewModel(order, menuItems);
 
@@ -84,17 +84,17 @@ namespace Late_Night_Snacks.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (context.OrderMenuItem
+                if (context.OrderDetails
                     .Where(omi => omi.MenuItemId == addOrderMenuItemViewModel.MenuItemId)
                     .Where(omi => omi.OrderId == addOrderMenuItemViewModel.OrderId)
                     .ToList().Count == 0)
                 {
-                    OrderMenuItem orderMenuItem = new OrderMenuItem
+                    OrderDetail orderMenuItem = new OrderDetail
                     {
                         MenuItemId = addOrderMenuItemViewModel.MenuItemId,
                         OrderId = addOrderMenuItemViewModel.OrderId
                     };
-                    context.OrderMenuItem.Add(orderMenuItem);
+                    context.OrderDetails.Add(orderMenuItem);
                     context.SaveChanges();
                 }
 

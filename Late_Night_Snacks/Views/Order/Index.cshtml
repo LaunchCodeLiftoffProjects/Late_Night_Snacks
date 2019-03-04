@@ -27,7 +27,7 @@
 <ul>
     @foreach (var order in Model)
     {
-        <li><a asp-controller="Order" asp-action="ViewMenu" asp-route-id="@order.Id">@order.CustomerName</a></li>
+        <li><a asp-controller="Order" asp-action="ViewMenu" asp-route-id="@order.OrderId">@order.CustomerName</a></li>
     }
 </ul>
 

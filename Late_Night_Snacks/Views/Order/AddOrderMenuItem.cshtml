@@ -6,7 +6,7 @@
             <label asp-for="MenuItemId"></label> 
             <select asp-for="MenuItemId" asp-items="Model.MenuItems"></select>
             <span asp-validation-for="MenuItemId"></span>
-            <input type="hidden" asp-for="OrderId"  value="@Model.Order.Id" />
+            <input type="hidden" asp-for="OrderId"  value="@Model.Order.OrderId" />
             <input type="submit" value="Add Item" />
         </form>
     </div>

@@ -27,7 +27,7 @@ namespace Late_Night_Snacks.ViewModels
         public AddOrderMenuItemViewModel (Order order, IEnumerable<MenuItem> menuItems)
         {
             this.Order = order;
-            this.OrderId = order.Id;
+            this.OrderId = order.OrderId;
 
             MenuItems = new List<SelectListItem>();
 
@@ -35,7 +35,7 @@ namespace Late_Night_Snacks.ViewModels
             {
                 MenuItems.Add(new SelectListItem
                 {
-                    Value = menuItem.ID.ToString(),
+                    Value = menuItem.MenuItemId.ToString(),
                     Text = menuItem.Name
                 });
             }

@@ -69,7 +69,7 @@ namespace Late_Night_Snacks.Controllers
         {
             foreach(int menuId in menuIds)
             {
-                MenuItem theItem = context.MenuItems.Single(x => x.ID == menuId);
+                MenuItem theItem = context.MenuItems.Single(x => x.MenuItemId == menuId);
                 context.MenuItems.Remove(theItem);
             }
             context.SaveChanges();
