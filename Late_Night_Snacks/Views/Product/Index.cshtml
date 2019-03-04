@@ -1,0 +1,51 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<html>
+<head>
+    <style>
+        body {
+            background-color: dimgrey;
+        }
+
+        h1 {
+            color: red;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+        }
+
+        h2 {
+            color: red;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+        }
+    </style>
+</head>
+<body>
+
+    <h3>MenuItems List</h3>
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Add To Cart</th>
+        </tr>
+        @foreach (MenuItem m in ViewBag.MenuItems)
+        {
+        <tr>
+            <td>@m.Name</td>
+            <td>@m.Description</td>
+            <td>@m.Price</td>
+            <td>@m.Quantity</td>
+            <td align="center">
+                <a asp-controller="cart" asp-action="buy" asp-route-id="@m.MenuItemId">Add to cart</a>
+            </td>
+        </tr>
+        }
+    </table>
+
+</body>
+</html>

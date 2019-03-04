@@ -10,8 +10,9 @@ namespace Late_Night_Snacks.Models
     {
 
         [Key]
-        public int MenuItemId { get; set; }
+        public int RecordId { get; set; }
         public string CartId { get; set; }
+        public int MenuItemId { get; set; }
         public int Count { get; set; }
         public DateTime DateCreated { get; set; }
         public virtual MenuItem MenuItem { get; set; }

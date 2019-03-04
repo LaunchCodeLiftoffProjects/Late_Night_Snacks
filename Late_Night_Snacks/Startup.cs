@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Late_Night_Snacks.Data;
-using Late_Night_Snacks.Helpers;
+
 using Late_Night_Snacks.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -36,12 +36,7 @@ namespace Late_Night_Snacks
            
             services.AddDistributedMemoryCache();
 
-            services.AddSession(options =>
-            {
-                // Set a short timeout for easy testing.
-                options.IdleTimeout = TimeSpan.FromSeconds(10);
-                options.Cookie.HttpOnly = true;
-            });
+            services.AddSession();
 
             services.AddMvc();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
@@ -82,23 +77,5 @@ namespace Late_Night_Snacks
         }
 
     }
-
-   /* public static class RoleHelper
-    {
-        private static async Task EnsureRoleCreated(RoleManager<IdentityRole> roleManager, string roleName)
-        {
-            if (!await roleManager.RoleExistsAsync(roleName))
-            {
-                await roleManager.CreateAsync(new IdentityRole(roleName));
-            }
-        }
-        public static async Task EnsureRolesCreated(this RoleManager<IdentityRole> roleManager)
-        {
-            //add roles that should be in database, here
-            await EnsureRoleCreated(roleManager, "Member");
-            await EnsureRoleCreated(roleManager, "Anonymous");
-            await EnsureRoleCreated(roleManager, "Admin");
-        }
-        
-    }*/
+ 
 }

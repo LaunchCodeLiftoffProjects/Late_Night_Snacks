@@ -19,25 +19,21 @@ namespace Late_Night_Snacks.Migrations.MenuItemsDb
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Late_Night_Snacks.Models.Cart", b =>
+            modelBuilder.Entity("Late_Night_Snacks.Models.Item", b =>
                 {
-                    b.Property<int>("MenuItemId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CartId");
+                    b.Property<int?>("MenuItemId");
 
-                    b.Property<int>("Count");
+                    b.Property<int>("Quantity");
 
-                    b.Property<DateTime>("DateCreated");
+                    b.HasKey("Id");
 
-                    b.Property<int?>("MenuItemId1");
+                    b.HasIndex("MenuItemId");
 
-                    b.HasKey("MenuItemId");
-
-                    b.HasIndex("MenuItemId1");
-
-                    b.ToTable("Carts");
+                    b.ToTable("Items");
                 });
 
             modelBuilder.Entity("Late_Night_Snacks.Models.MenuItem", b =>
@@ -95,11 +91,27 @@ namespace Late_Night_Snacks.Migrations.MenuItemsDb
                     b.ToTable("OrderDetails");
                 });
 
-            modelBuilder.Entity("Late_Night_Snacks.Models.Cart", b =>
+            modelBuilder.Entity("Late_Night_Snacks.Models.Product", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Photo");
+
+                    b.Property<double>("Price");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Product");
+                });
+
+            modelBuilder.Entity("Late_Night_Snacks.Models.Item", b =>
                 {
                     b.HasOne("Late_Night_Snacks.Models.MenuItem", "MenuItem")
                         .WithMany()
-                        .HasForeignKey("MenuItemId1");
+                        .HasForeignKey("MenuItemId");
                 });
 
             modelBuilder.Entity("Late_Night_Snacks.Models.OrderDetail", b =>
