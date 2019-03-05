@@ -38,8 +38,9 @@ namespace Late_Night_Snacks.Controllers
             {
                 List<Item> cart = new List<Item>();
                 cart.Add(new Item { MenuItem = context.MenuItems.Find(id), Quantity = 1 });
-                SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", cart);
+                SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", cart);  
             }
+
             else
             {
                 List<Item> cart = SessionHelper.GetObjectFromJson<List<Item>>(HttpContext.Session, "cart");
