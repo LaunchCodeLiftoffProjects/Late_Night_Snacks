@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Late_Night_Snacks.Controllers
-{
+{/*
     public class OrderController : Controller
     {
         private MenuItemsDbContext context;
@@ -107,5 +107,5 @@ namespace Late_Night_Snacks.Controllers
 
 
 
-    }
+    }*/
 }

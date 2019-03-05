@@ -11,9 +11,7 @@ namespace Late_Night_Snacks.Data
     public class MenuItemsDbContext : DbContext
     {
         public DbSet<MenuItem> MenuItems { get; set; }
-        public DbSet<Order> Orders { get; set; }
-        public DbSet<OrderDetail> OrderDetails { get; set; }
-        public DbSet<Product> Products { get; set; }
+
         public DbSet<Item> Items { get; set; }
 
         public MenuItemsDbContext()
