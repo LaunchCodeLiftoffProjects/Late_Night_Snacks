@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<style>
+    body {
+        background-color: dimgrey;
+    }
+
+    h1 {
+        color: red;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-align: center;
+        text-shadow: 2px 6px 0px #000
+    }
+
+    h2 {
+        color: red;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    p {
+        color: white;
+        font-size: large;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-align: center
+    }
+    #calendar-container {
+        padding: 10px;
+        width: 210px;
+        height: 240px;
+        text-align: center;
+        border: 1px solid #eee;
+        border-radius: 10px;
+        font-size: 16px;
+        font-family: Arial;
+        background-image: linear-gradient(#fff, #d3d3d3);
+    }
+
+        #calendar-container > div {
+            padding: 0;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+    #calendar-month-year {
+        margin: 5px;
+        text-align: center;
+    }
+
+    #calendar-dates > table > tr > td {
+        padding: 5px;
+        text-align: center;
+    }
+</style>
+<script>
+    window.onload = function () {
+        var d = new Date();
+        var month_name = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        var month = d.getMonth();   //0-11
+        var year = d.getFullYear(); //2014
+        var first_date = month_name[month] + " " + 1 + " " + year;
+        //September 1 2014
+        var tmp = new Date(first_date).toDateString();
+        //Mon Sep 01 2014 ...
+        var first_day = tmp.substring(0, 3);    //Mon
+        var day_name = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        var day_no = day_name.indexOf(first_day);   //1
+        var days = new Date(year, month + 1, 0).getDate();    //30
+        //Tue Sep 30 2014 ...
+        var calendar = get_calendar(day_no, days);
+        document.getElementById("calendar-month-year").innerHTML = month_name[month] + " " + year;
+        document.getElementById("calendar-dates").appendChild(calendar);
+    }
+
+    function get_calendar(day_no, days) {
+        var table = document.createElement('table');
+        var tr = document.createElement('tr');
+
+        //row for the day letters
+        for (var c = 0; c <= 6; c++) {
+            var td = document.createElement('td');
+            td.innerHTML = "SMTWTFS"[c];
+            tr.appendChild(td);
+        }
+        table.appendChild(tr);
+
+        //create 2nd row
+        tr = document.createElement('tr');
+        var c;
+        for (c = 0; c <= 6; c++) {
+            if (c == day_no) {
+                break;
+            }
+            var td = document.createElement('td');
+            td.innerHTML = "";
+            tr.appendChild(td);
+        }
+
+        var count = 1;
+        for (; c <= 6; c++) {
+            var td = document.createElement('td');
+            td.innerHTML = count;
+            count++;
+            tr.appendChild(td);
+        }
+        table.appendChild(tr);
+
+        //rest of the date rows
+        for (var r = 3; r <= 7; r++) {
+            tr = document.createElement('tr');
+            for (var c = 0; c <= 6; c++) {
+                if (count > days) {
+                    table.appendChild(tr);
+                    return table;
+                }
+                var td = document.createElement('td');
+                td.innerHTML = count;
+                count++;
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        }
+        return table;
+    }
+</script>
+<html>
+<head>
+    <title>Calendar</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body background="https://i.imgur.com/yYBsXCo.jpg">
+    <h1>Follow our Calendar of Events to see where we will be next!</h1>
+    <p>The best thing about our truck is that you can pre-order your food whenever you like! Already have
+    tickets for a concert? No problem! Make sure you secure you food order and a time for pickup so you
+    can make sure you will be fed for the event! Your pre-order secures that we will being what you order with 
+    us and ensures you get the meal you want, unlike other trucks who work on a first-come, first-serve basis;
+    we make sure you get what you want and prepare for that head of time! So schedule your orders along with your
+    ticket purchases and you will have both an amazing music and culinary experience with Late-Night Snacks!</p>
+    <div id="calendar-container">
+        <div id="calendar-header">
+            <span id="calendar-month-year"></span>
+        </div>
+        <div id="calendar-dates">
+            <!--<img src="https://i.imgur.com/PetpE4m.jpg" width="800px" height="400x" text-align:center; />-->
+        </div>
+        
+    </div>
+</body>
+</html>

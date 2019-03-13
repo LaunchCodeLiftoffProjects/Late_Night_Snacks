@@ -1,0 +1,60 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<html>
+<head>
+    <style>
+        body {
+            background-color: dimgrey;
+        }
+
+        h1 {
+            color: red;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+        }
+
+        h2 {
+            color: red;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+        }
+    </style>
+</head>
+<body>
+
+    <h3>Cart Page</h3>
+    <table class="table" >
+        <tr>
+            <th>Option</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Sub Total</th>
+        </tr>
+        @foreach (var item in ViewBag.cart)
+        {
+            <tr>
+                <td><a asp-controller="cart" asp-action="remove" asp-route-id="@item.MenuItem.MenuItemId">Remove</a></td>
+                <td>@item.MenuItem.MenuItemId</td>
+                <td>@item.MenuItem.Name</td>
+                <td>@item.MenuItem.Description</td>
+                <td>@item.MenuItem.Price</td>
+                <td>@item.Quantity</td>
+                <td>@(item.MenuItem.Price * item.Quantity)</td>
+            </tr>
+        }
+        <tr>
+            <td align="right" colspan="6">Sum</td>
+            <td>
+                @ViewBag.total
+            </td>
+        </tr>
+    </table>
+    <br>
+    <a asp-controller="product" asp-action="index">Continue Shopping</a>   <a asp-controller="order" asp-action="ViewOrder">Checkout</a>
+
+</body>
+</html>

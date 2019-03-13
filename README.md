@@ -48,3 +48,5 @@ We creted our wireframes via moqups. Here are our [wireframes](https://app.moqup
 
 We created our Project Tracker on Pivotal Tracker. This is our [project tracker](https://www.pivotaltracker.com/n/projects/2240249).
 
+### Project Presentation
+https://docs.google.com/presentation/d/1DIpD3ApgdSxNBfLYOqfx0v4TSsZYQm0csW7zfxZCtB4/edit?usp=sharing

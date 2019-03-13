@@ -1,0 +1,9 @@
+﻿<ul>
+    @foreach (var orderMenuItem in Model.MenuItems)
+    {
+        <li>@orderMenuItem.MenuItem.Name</li>
+    }
+
+</ul>
+
+<p><a asp-controller="Order" asp-action="AddOrderMenuItem" asp-route-id="@Model.Order.OrderId">Add Items</a></p>
