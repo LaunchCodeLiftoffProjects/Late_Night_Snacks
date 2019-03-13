@@ -18,9 +18,9 @@ namespace Late_Night_Snacks.Controllers
             context = dbContext;
         }
 
-        [Route("")]
+        //[Route("")]
         [Route("index")]
-        [Route("~/")]
+        //[Route("~/")]
         public IActionResult Index()
         {
 
