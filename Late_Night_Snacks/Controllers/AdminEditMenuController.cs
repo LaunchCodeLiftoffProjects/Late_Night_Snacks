@@ -11,23 +11,23 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Late_Night_Snacks.Controllers
 {
-    public class StoreManagerController : Controller
+    public class AdminEditMenuController : Controller
     {
         
         private readonly MenuItemsDbContext _context;
 
-        public StoreManagerController(MenuItemsDbContext context)
+        public AdminEditMenuController(MenuItemsDbContext context)
         {
             _context = context;
         }
         [Authorize]
-        // GET: StoreManager
+        // GET: AdminEditMenu
         public async Task<IActionResult> Index()
         {
             return View(await _context.MenuItems.ToListAsync());
         }
         [Authorize]
-        // GET: StoreManager/Details/5
+        // GET: AdminEditMenu/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -46,14 +46,14 @@ namespace Late_Night_Snacks.Controllers
         }
 
         [Authorize]
-        // GET: StoreManager/Create
+        // GET: AdminEditMenu/Create
         public IActionResult Create()
         {
             return View();
         }
 
         [Authorize]
-        // POST: StoreManager/Create
+        // POST: AdminEditMenu/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -70,7 +70,7 @@ namespace Late_Night_Snacks.Controllers
         }
 
         [Authorize]
-        // GET: StoreManager/Edit/5
+        // GET: AdminEditMenu/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -87,7 +87,7 @@ namespace Late_Night_Snacks.Controllers
         }
 
         [Authorize]
-        // POST: StoreManager/Edit/5
+        // POST: AdminEditMenu/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -123,7 +123,7 @@ namespace Late_Night_Snacks.Controllers
         }
 
         [Authorize]
-        // GET: StoreManager/Delete/5
+        // GET: AdminEditMenu/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -142,7 +142,7 @@ namespace Late_Night_Snacks.Controllers
         }
 
         [Authorize]
-        // POST: StoreManager/Delete/5
+        // POST: AdminEditMenu/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
